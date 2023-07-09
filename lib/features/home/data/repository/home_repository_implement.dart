@@ -86,8 +86,8 @@ class HomeRepositoryImplement implements HomeRepository {
     try{
       var data = await apiService.getData(
           endPoint:
-          'volumes?Filtering=free-ebooks&Sorting=relevance',query:{
-            'q' : text,
+          'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$text',query:{
+            'q' : 'subject:$text',
       } );
 
       List<BookModel> bookList = [];
